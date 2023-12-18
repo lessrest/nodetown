@@ -1,9 +1,22 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
+    "ghcr.io/devcontainers-contrib/features/tailscale:1": {},
     "ghcr.io/devcontainers-contrib/features/opam-asdf:2": {},
+    "ghcr.io/devcontainers-contrib/features/yt-dlp:2": {},
     "ghcr.io/devcontainers/features/rust:1": {
       "profile": "default"
+    }
+  },
+  "postCreateCommand": "opam install dune ocaml-lsp-server reason",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ocamllabs.ocaml-platform",
+        "tailscale.vscode-tailscale",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
     }
   }
 }
